@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title> websait as  </title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+height:100vh;
+overflow-x:hidden;
+color:white;
+}
+
+/* navbar */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:20px;
+text-align:center;
+font-size:18px;
+background:rgba(0,0,0,0.2);
+backdrop-filter:blur(5px);
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* hero */
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+flex-direction:column;
+}
+
+.hero h1{
+font-size:60px;
+margin:10px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+/* about */
+
+.about{
+padding:80px 20px;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.about img{
+width:200px;
+height:200px;
+border-radius:50%;
+object-fit:cover;
+border:5px solid white;
+}
+
+.about-text{
+max-width:400px;
+}
+
+/* gallery */
+
+.gallery{
+padding:60px;
+text-align:center;
+}
+
+.gallery h2{
+margin-bottom:30px;
+}
+
+.gallery img{
+width:200px;
+height:200px;
+object-fit:cover;
+margin:10px;
+border-radius:10px;
+transition:0.3s;
+}
+
+.gallery img:hover{
+transform:scale(1.1);
+}
+
+/* contact */
+
+.contact{
+padding:60px;
+text-align:center;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:5px;
+background:white;
+color:#ff5e78;
+font-size:16px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ffe3ea;
+}
+
+/* bunga jatuh */
+
+.flower{
+position:absolute;
+top:-50px;
+font-size:30px;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+
+0%{
+transform:translateY(-10vh) rotate(0deg);
+opacity:1;
+}
+
+100%{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:rgba(0,0,0,0.3);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+<a href="#">Home</a>
+<a href="#about">Tentang</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<!-- HERO -->
+
+<div class="hero">
+
+<h1>🌸 Flower Website</h1>
+
+<p>Selamat datang di website saya </p>
+
+</div>
+
+<!-- ABOUT -->
+
+<section id="about" class="about">
+
+<img src="https://files.catbox.moe/erl9ll.jpg">
+
+<div class="about-text">
+
+<h2>Tentang Saya</h2>
+
+<p>
+Halo nama saya <b> Afif Alkayyis</b>. Saya sedang belajar membuat
+website menggunakan HTML, CSS, dan JavaScript.
+</p>
+
+<p>
+Saya menyukai desain website yang estetis seperti
+tema bunga dan warna pastel.
+</p>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery" class="gallery">
+
+<h2>Gallery Bunga</h2>
+
+<img src="https://images.unsplash.com/photo-1468327768560-75b778cbb551">">
+<img src="https://images.unsplash.com/photo-1522383225653-ed111181a951">">
+<img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" width="200">>">
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+<h2>Kontak</h2>
+
+<p>Klik tombol untuk menyapa 🌸</p>
+
+<button onclick="showMessage()">Klik Disini</button>
+
+</section>
+
+<footer>
+
+<p>© 2026 Website</p>
+
+</footer>
+
+<script>
+
+/* bunga jatuh */
+
+function createFlower(){
+
+const flower=document.createElement("div");
+
+flower.classList.add("flower");
+
+flower.innerHTML="🌸";
+
+flower.style.left=Math.random()*100+"vw";
+
+flower.style.animationDuration=(3+Math.random()*5)+"s";
+
+flower.style.fontSize=(20+Math.random()*30)+"px";
+
+document.body.appendChild(flower);
+
+setTimeout(()=>{
+
+flower.remove();
+
+},8000);
+
+}
+
+setInterval(createFlower,300);
+
+
+/* tombol kontak */
+
+function showMessage(){
+
+alert("Terima kasih sudah mengunjungi website saya 🌸");
+
+}
+
+</script>
+
+</body>
+</html>
